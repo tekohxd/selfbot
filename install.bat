@@ -1,15 +1,59 @@
 @echo off
 
-if not defined in_subprocess (cmd /k set in_subprocess=y ^& %0 %*) & exit
+mode con:cols=130 lines=45
+
+color 0c
+echo "                                 .-~~``~~-,                                                    "
+echo "                                (          \                                                   "
+echo "                             .--'`-.__,     \                                                  "
+echo "                            /      |\O/      |                                                 "
+echo "                           |,      /         |                                                 "
+echo "                           \   ,--`\         |                                                 "
+echo "                            `.(   /          \                                                 "
+echo "                                 /            \                                                "
+echo "                                / .  ;    :.   \                                               "
+echo "                               /__;   \   | \   \                                              "
+echo "                               /   '. |\_ /-.'-._\                                             "
+echo "                              |      `   `        \                                            "
+echo "                              |    /               \                                           "
+echo "                              |    |                |                                          "
+echo "                              |    |                \                                          "
+echo "                              \    \                 |                                         "
+echo "                               \    |  |   |   \     \                                         "
+echo "                                \   \  \   \    \     |                                        "
+echo "                                 '.  \  \  ' \   \     \                                       "
+echo "                                   \  \  `\   `\  `\    \                                      "
+echo "                                    |  `\  `\   `.  '.   \                                     "
+echo "                                     \   `-. '._  '-. '._/\                                    "
+echo "                                      |     \-._;-._ '-._  \                                   "
+echo "                                      \      `\     `--` `--\                                  "
+echo "                                       ;_      `-.           |                                 "
+echo "                          ~==~===~===~,-.-.-'`;'=~=-.,_   __/=~=~=~~=                          "
+echo "                            =_ = -_ -( ( ( .-`( ( ( .-``""`-_ = - _ -                          "
+echo "                          - -   =   - ` ` ` _= ` ` `   =  -  -    =                            "
+echo "                          ~~==~=~~==~=~~=~~=~=~==~~=~~==~~=~~=~~~===~~                         "
+echo "                                                   \ . \  . '|                                 "
+echo "                                                    \   . .' /                                 "
+echo "                                                     '.   \.'|                                 "
+echo "                                                       '-.__/                                  "
 
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-echo             INSTALLING DEPENDENCIES
+echo                 SELFBOT INSTALL              
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-echo you still need to enter your token into config.json
-echo if you don't know how to find your token, watch this video:
-echo https://www.youtube.com/watch?v=tI1lzqzLQCs
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-echo continuing will install required depencdencies
+echo continuing will install files and required dependencies
+echo (you must have git installed - https://git-scm.com/download/win)
+echo (you must have nodejs installed - https://nodejs.org/en/)
+echo installation wont work without both of those
 pause
 
-npm i discord.js@11 table figlet
+call git init
+call git remote add origin https://github.com/tekohxd/selfbot
+call git fetch
+call git checkout origin/master -b master
+
+call npm i discord.js@11 table figlet
+
+echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+echo installation complete, you must still enter your token into
+echo the config.json file
