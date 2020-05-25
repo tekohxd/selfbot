@@ -46,6 +46,9 @@ echo "press any key to continue.."
 read
 
 git init
+git add * 
+git stash
+git pull
 git remote add origin https://github.com/tekohxd/selfbot
 git fetch
 git checkout origin/master -b master
