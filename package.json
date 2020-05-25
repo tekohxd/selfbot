@@ -1,0 +1,16 @@
+{
+  "name": "selfbotreact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "selfbot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.6.4",
+    "figlet": "^1.4.0",
+    "table": "^5.4.6"
+  }
+}
