@@ -57,3 +57,6 @@ call npm i discord.js@11 table figlet
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 echo installation complete, you must still enter your token into
 echo the config.json file
+pause
+echo tip: hosting this on a vps/cloud server (east NA) will typically give faster responses but isn't required
+pause
