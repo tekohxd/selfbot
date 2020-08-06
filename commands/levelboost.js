@@ -33,12 +33,11 @@ module.exports = {
     }
 }
 
-
 async function startBoost(client) {
-    running = true
     if (running) {
         return
     }
+    running = true
     setInterval(async () => {
         channels.forEach(async ch => {
             const channel = client.channels.find(c => c.id == ch.channel)
@@ -48,10 +47,20 @@ async function startBoost(client) {
                 return channels.delete(ch.channel)
             }
 
-            await channel.send(channels.get(ch.channel).text).then(m => {
+            await channel.send(channels.get(ch.channel).text + " `" + makeid(Math.floor(Math.random() * 10) + 1) + "`").then(m => {
                 m.delete(15000).catch()
             })
             console.log("level booster sent in channel " + channel.name)
         })
     }, 60000)
 }
+
+function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+ }
