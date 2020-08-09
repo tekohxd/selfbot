@@ -22,7 +22,7 @@ module.exports = {
         } else {
             channels.set(message.channel.id, {
                 channel: message.channel.id,
-                text: args[0]
+                text: args.join(" ")
             })
             if (!running) {
                 startBoost(message.client)
