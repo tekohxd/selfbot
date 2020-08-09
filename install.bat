@@ -48,6 +48,9 @@ echo installation wont work without both of those
 pause
 
 call git init
+call git add * 
+call git stash
+call git pull
 call git remote add origin https://github.com/tekohxd/selfbot
 call git fetch
 call git checkout origin/master -b master
